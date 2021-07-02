@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import ListaDeNotas from './components/ListaDeNotas';
-import FormularioCadastro from './components/FormularioCadastro';
-import ListaDeCategorias from './components/ListaDeCategorias';
-import './assets/App.css';
-import './assets/index.css';
+import React, { Component } from "react";
+import ListaDeNotas from "./components/ListaDeNotas";
+import FormularioCadastro from "./components/FormularioCadastro";
+import ListaDeCategorias from "./components/ListaDeCategorias";
+import "./assets/App.css";
+import "./assets/index.css";
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
       notas: [],
-      categorias: [],
+      categorias: ["Games", "Música"],
     };
   }
 
