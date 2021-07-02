@@ -11,6 +11,7 @@ class App extends Component {
     super();
     this.categorias = new Categorias();
     this.notas = new ArrayDeNotas();
+    
   }
 
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
             categorias={this.categorias.categorias}
           />
           <ListaDeNotas
-            apagarNota={this.notas.apagarNotas}
+            apagarNota={this.notas.apagarNota}
             notas={this.notas.notas}
           />
         </main>
