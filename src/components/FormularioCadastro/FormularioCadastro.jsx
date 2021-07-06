@@ -1,16 +1,30 @@
-import Button from '@material-ui/core/Button';
-
+import { Button, TextField } from '@material-ui/core';
 function FormularioCadastro() {
   return (
     <form>
-      <label>Nome</label>
-      <input type="text" />
+      <TextField
+        id="nome"
+        label="Nome"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+      />
 
-      <label>Sobrenome</label>
-      <input type="text" />
+      <TextField
+        id="sobrenome"
+        label="Sobrenome"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+      />
 
-      <label>CPF</label>
-      <input type="text" />
+      <TextField
+        id="cpf"
+        label="CPF"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+      />
 
       <label>Promoções</label>
       <input type="checkbox" />
