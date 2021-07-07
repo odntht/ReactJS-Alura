@@ -1,6 +1,9 @@
 import { Button, FormControlLabel, Switch, TextField } from '@material-ui/core';
+import { useState } from 'react';
+
 function FormularioCadastro() {
-  let nome = '';
+  const [nome, setNome] = useState('Ricardo');
+
   return (
     <form
       onSubmit={(event) => {
@@ -11,9 +14,9 @@ function FormularioCadastro() {
       <TextField
         value={nome}
         onChange={(event) => {
-          nome = event.target.value;
-          if (nome.length > 3) {
-            nome = nome.substr(0, 3);
+          setNome(event.target.value);
+          if (nome.length >= 3) {
+            setNome(nome.substr(0, 3));
           }
         }}
         id="nome"
