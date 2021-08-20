@@ -1,19 +1,18 @@
-import { Button, FormControlLabel, Switch, TextField } from '@material-ui/core';
-import { useState } from 'react';
+import React, { useState } from "react";
+import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
-function FormularioCadastro({ aoEnviar, validarCPF }) {
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
-  const [cpf, setCPF] = useState('');
+function FormularioCadastro({aoEnviar, validarCPF}) {
+  const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
+  const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
-  const [novidades, setNovidades] = useState(true);
-  const [erros, setErros] = useState({ cpf: { valido: true, texto: '' } });
-
+  const [novidades, setNovidades] = useState(false);
+  const [erros, setErros] = useState({cpf:{valido:true, texto:""}})
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
+        aoEnviar({nome, sobrenome, cpf, novidades, promocoes});
       }}
     >
       <TextField
@@ -24,10 +23,9 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
         id="nome"
         label="Nome"
         variant="outlined"
-        fullWidth
         margin="normal"
+        fullWidth
       />
-
       <TextField
         value={sobrenome}
         onChange={(event) => {
@@ -36,29 +34,28 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
         id="sobrenome"
         label="Sobrenome"
         variant="outlined"
-        fullWidth
         margin="normal"
+        fullWidth
       />
-
       <TextField
         value={cpf}
         onChange={(event) => {
-          setCPF(event.target.value);
+          setCpf(event.target.value);
         }}
-        onBlur={(event) => {
+
+        onBlur={(event)=>{
           const ehValido = validarCPF(cpf);
-          setErros({
-            cpf: ehValido,
-          });
+          setErros({cpf:ehValido})
         }}
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
-        id="cpf"
+        id="CPF"
         label="CPF"
         variant="outlined"
-        fullWidth
         margin="normal"
+        fullWidth
       />
+
       <FormControlLabel
         label="Promoções"
         control={
